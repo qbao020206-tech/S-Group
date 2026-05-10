@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top:100px;
+        }
+        .cl-image {
+            width: 700px;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            position: relative
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(248, 225, 182,0.4); /* Màu đen trong suốt 40% */
+            opacity: 0; /* Mặc định tàng hình */
+            transition: opacity 0.4s ease; /* Hiệu ứng mượt 0.4 giây */
+            
+        }
+        .cl-title{
+            position: absolute;
+            top: 50%;            /* Đẩy từ trên xuống 30% khung ảnh */
+            left: 0;
+            width: 100%;         /* Chiếm trọn chiều ngang để text-align hoạt động */
+            text-align: center;  /* Căn giữa chữ tuyệt đối */
+            color: #4a5568;      /* Đảm bảo chữ màu trắng */
+            font-family: Arial, sans-serif;
+            font-size: 42px;
+            letter-spacing: 3px; /* Giãn chữ giống ảnh gốc */
+            margin: 0;
+            transition: all 0.4s ease;
+        }
+        .cl-first {
+            font-weight: 300;
+        }
+        .cl-last {
+            font-weight: 900;
+        }
+        .cl-subtitle {
+            position: absolute; 
+            bottom: 40px; 
+            width: 100%;
+            text-align: center; 
+            color: white;
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 20px;
+            line-height: 1.6;
+            opacity: 0;
+            margin: 0;
+            transition: opacity 0.4s ease;
+            
+        }
+
+        .cl-image:hover .overlay {
+            opacity: 1; /* Khi hover vào ảnh, lớp phủ sẽ hiện lên */
+        }
+        .cl-image:hover .cl-title {
+            top: 30%;
+            color: white; 
+            transition: all 0.4s ease;
+
+        }
+        .cl-image:hover .cl-subtitle {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cl-image">
+        <img src="hinhconcao.jpg">
+        <div class="overlay"></div>
+        <div class="Text_img">
+            <h1 class="cl-title">
+                <span class="cl-first">HOLY</span><span class="cl-last">SADIE</span>
+            </h1>
+            <p class="cl-subtitle">
+               SADIE NEVER TOOK HER EYES OFF ME.<br>
+               SHE HAD A DARK SOUL.
+            </p>
+        
+        
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+/* --- BIẾN MÀU & RESET --- */
+:root {
+    --primary-color: #f15b5b;
+    --text-main: #222;
+    --text-muted: #666;
+    --bg-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- TIỆN ÍCH (UTILITIES) --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding-top: 80px;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.text-center { text-align: center; }
+.mb-40 { margin-bottom: 40px; }
+.mt-40 { margin-top: 40px; }
+
+.grid-2 {
+    display: flex;
+    gap: 60px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Nút bấm viền đỏ */
+.btn-outline {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 30px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* --- NAVBAR --- */
+#navbar {
+    border-bottom: 1px solid #eaeaea;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    background-color: #000;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.name {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.social-links { display: flex; gap: 10px; }
+.social-links a {
+    background-color: var(--primary-color);
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.social-links a:hover { background-color: #d14a4a; }
+
+/* --- HERO --- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding-top: 60px;
+}
+
+.hero-image { flex: 1; }
+.hero-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.hero-content { flex: 1.2; }
+.subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 strong { font-weight: 700; }
+
+.stats { display: flex; gap: 40px; }
+.stat-item h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: -5px;
+}
+.stat-item p { font-size: 13px; color: #777; font-weight: 500; }
+
+/* --- SKILLS --- */
+.skill-col { flex: 1; }
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+.tag {
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* --- WORK EXPERIENCE --- */
+.exp-col { flex: 1; }
+.date {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+.company {
+    font-size: 22px;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 5px;
+}
+.role {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.exp-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.exp-list li { margin-bottom: 10px; }
+
+/* --- LATEST WORKS --- */
+.project-card {
+    display: flex;
+    background-color: var(--bg-light);
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.project-info {
+    flex: 1;
+    padding: 50px;
+}
+
+.project-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.project-info p {
+    margin-bottom: 30px;
+}
+
+.project-img {
+    flex: 1;
+    display: flex;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding-top: 80px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer-subtitle {
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Nút bấm nền đen viền đỏ */
+.btn-outline-dark {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.copyright {
+    margin-top: 80px;
+    padding: 20px;
+    border-top: 1px solid #222;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
