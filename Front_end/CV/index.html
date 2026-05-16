@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Stroff - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff5b60;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            background-color: white; 
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background-color: black;
+            color: white;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+     
+        .social-links {
+            display: flex;
+            gap: 15px; 
+            align-items: center;
+        }
+
+   
+        .social-links {
+            display: flex;
+            gap: 15px; 
+            align-items: center;
+        }
+
+        .social-icon {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            width: 30px; 
+            height: 30px;
+            background-color: #ff5b60;
+            border-radius: 50%; 
+            transition: background-color 0.3s ease; 
+        }   
+
+    
+        .social-icon i {
+            color: white; 
+            font-size: 16px; 
+        }
+
+        
+        .social-icon:hover {
+            background-color: #e04a4f;
+        }
+
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 80px 0;
+        }
+
+        .hero-img {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .greeting {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            color: var(--primary-red);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .about {
+            padding: 40px 0;
+        }
+
+        .about p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 1px solid red;
+            color:red;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .skills {
+            padding: 60px 0;
+            display: flex;
+            gap: 60px;
+        }
+
+        .skills-col {
+            flex: 1;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .experience {
+            padding: 40px 0 80px;
+            display: flex;
+            gap: 60px;
+        }
+
+        .exp-col {
+            flex: 1;
+        }
+
+        .exp-date {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .exp-col h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .exp-role {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .exp-col p, .exp-col li {
+            color: gray;
+            font-size: 14px;
+        }
+        
+        .exp-col p {
+            margin-bottom: 15px;
+        }
+
+        .exp-col ul {
+            padding-left: 20px;
+        }
+
+        .exp-col li {
+            margin-bottom: 10px;
+        }
+
+     
+        .works {
+            padding: 40px 0 80px;
+        }
+
+        .project-card {
+            display: flex;
+            background-color: #f8f9fa;
+            margin-bottom: 40px;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-info {
+            flex: 1;
+            padding: 60px;
+        }
+
+        .project-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .project-info p {
+            color: gray;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .project-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .project-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .footer-subtitle {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .footer-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .footer-desc {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        footer .btn {
+            border-color: red;
+            color: red;
+        }
+
+        footer .btn:hover {
+            background-color: red;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <div class="logo-icon">J</div>
+                JASON STROFF
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/qbao020206-tech/S-Group/tree/Front-end" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://stackoverflow.com/" target="_blank" class="social-icon">
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container hero">
+        <div class="hero-img">
+            <img src="backgroud.jpg" alt="Jason Stroff Portrait">
+        </div>
+        <div class="hero-content">
+            <p class="greeting">Hi there</p>
+            <h1>I'm Jason Stroff<br>UI/UX DESIGNER +<br>DEVELOPER based in<br>Florida.</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>6+</h3>
+                    <p>Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>89</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>52</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container about">
+        <h2 class="section-title">About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum ante a porta blandit. Quisque velit tortor, ultricies in quam ut, luctus convallis metus. Nunc vitae felis rutrum, mattis justo quis, bibendum tellus. Integer bibendum eget dolor nec venenatis. Aliquam erat volutpat. Etiam et est vitae turpis accumsan vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec hendrerit mi Nulla consequat tempor.</p>
+        <button class="btn">Download Resume</button>
+    </section>
+
+    <section class="container skills">
+        <div class="skills-col">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Vue.js</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Sequelize</span>
+                <span class="skill-tag">Github</span>
+                <span class="skill-tag">HTML</span>
+            </div>
+        </div>
+        <div class="skills-col">
+            <h2 class="section-title">Other Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Storyblok</span>
+                <span class="skill-tag">PWAs</span>
+                <span class="skill-tag">Responsive Web Design</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Vuetify</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container experience">
+        <h2 class="section-title" style="display:none;">Work Experience</h2> <div style="width: 100%;">
+            <h2 class="section-title">Work Experience</h2>
+            <div style="display: flex; gap: 60px; margin-top: 20px;" class="experience-inner">
+                <div class="exp-col">
+                    <p class="exp-date">2019 - Present</p>
+                    <h3>Matrix Media Inc</h3>
+                    <p class="exp-role">Full Stack developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.</p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    </ul>
+                </div>
+                <div class="exp-col">
+                    <p class="exp-date">2018 - 2019</p>
+                    <h3>Lexind</h3>
+                    <p class="exp-role">Senior app developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.</p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container works">
+        <h2 class="section-title">Latest Works</h2>
+        
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Tripy mobile app</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                <button class="btn">Details</button>
+            </div>
+            <div class="project-img" style="background-color: #e0f2fe;">
+                <img src="the1.jpg" alt="Tripy mobile app">
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Hello mobile app</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                <button class="btn">Details</button>
+            </div>
+            <div class="project-img" style="background-color: #f1f5f9;">
+                <img src="the2.jpg" alt="Hello mobile app">
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Cute cookies app</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                <button class="btn">Details</button>
+            </div>
+            <div class="project-img" style="background-color: #fce7f3;">
+                <img src="the3.jpg" alt="Cute cookies app">
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-subtitle">Stay In Touch</p>
+            <h2 class="footer-title">Ready to talk?</h2>
+            <p class="footer-desc">Feel free to contact us</p>
+            <button class="btn">Lets Talk</button>
+        </div>
+    </footer>
+
+</body>
+</html>
