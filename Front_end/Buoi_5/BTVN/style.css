@@ -1,0 +1,218 @@
+        *{margin: 0; padding:0; box-sizing: border-box}
+        body{
+            font-family: 'Segoe', sans-serif;
+            background: rgb(27, 27, 70);
+            color: white;
+            padding:40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        h2{
+            text-align: center;
+            color: rgb(231, 4, 252);
+            margin-bottom:20px;
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+        .transform {display:flex; gap:20px;}
+        .cl{
+            width:100px;
+            height:100px;
+            background: rgb(186, 4, 241);
+            border-radius:12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .box-translate:hover{
+            transform: translateX(25px);
+
+        }
+        .box-rotate:hover{
+            transform: rotate(45deg);
+        }
+        .box-scale:hover{
+            transform: scale(1.2);
+        }
+        .box-combine:hover{
+            transform: translateY(-25px) rotate(45deg) scale(1.2);
+        }
+        .overlay{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display:block;
+            transition: transform 0.5s ease;
+        }
+        .card:hover img{
+            transform: scale(1.1);
+        }
+        .overlay-card1{
+            position: absolute;
+            inset:0;
+            background: linear-gradient(to top, rgb(250, 249, 249,0.9)0%, transparent 75%);
+            display: flex;
+            justify-content: center;
+            opacity:0;
+            transition: opacity 0.5s ease;
+            align-items: flex-end;
+            padding:15px;
+            font-size: 20px;
+            font-weight: 800;
+            color: black;
+            letter-spacing: 2px;
+        }
+        .card:hover .overlay-card1{
+            opacity:1;
+        }
+        .overlay-card2{
+            position: absolute;
+            inset:0;
+            background: linear-gradient(to top, rgba(245, 3, 3, 0.9)0%, transparent 75%);
+            display: flex;
+            justify-content: center;
+            opacity:0;
+            transition: opacity 0.5s ease;
+            align-items: flex-end;
+            padding:15px;
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 2px;
+        }
+        .card:hover .overlay-card2{
+            opacity:1;
+        }
+        
+        .animation{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    
+        .box-bounce{ 
+            background: red;
+            animation: bounce 1s infinite;
+        }
+        .box-spin{ 
+            background: blue;
+            animation: spin 1s infinite;
+        }
+        .box-pulse{ 
+            background: green;
+            animation: pulse 1s infinite;
+        }
+        .box-slidein{
+            background: rgb(33, 170, 250);
+        }
+        
+        .loaders{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader1{
+            width: 100px;
+            height: 100px;
+            border: 10px solid rgba(255, 255, 255, 0.3);
+            border-top-color:rgb(116, 1, 248);
+            border-radius: 50%;
+           animation: spin 1s linear infinite;
+        }
+
+        .loader2{
+            display:flex;
+            gap: 10px;
+        }
+        .loader2 span{
+            width: 20px;
+            height: 20px;
+            background: rgb(116, 1, 248);
+            border-radius: 50%;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        .loader2 span:nth-child(2){
+            animation-delay: 0.2s;
+        }
+        .loader2 span:nth-child(3){
+            animation-delay: 0.4s;
+        }
+
+        .loader3{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            height: 50px;
+        }
+        .loader3 span{
+            width: 6px;
+            height: 30px;
+            background: rgb(116, 1, 248);
+            border-radius: 3%;
+            animation: bar 1s ease-in-out infinite;
+        }
+        @keyframes bar {
+        0%, 100% { transform: scaleY(0.4); }
+        50%       { transform: scaleY(1.2); }
+        }
+        .loader3 span:nth-child(2){
+            animation-delay: 0.1s;
+            background: #c4b5fd;
+        }
+        .loader3 span:nth-child(3){
+            animation-delay: 0.2s;
+        }
+        .loader3 span:nth-child(4){
+            animation-delay: 0.3s;
+            background: #c4b5fd;
+        }
+        .loader3 span:nth-child(5){
+            animation-delay: 0.4s;
+        }
