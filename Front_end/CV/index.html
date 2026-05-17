@@ -11,7 +11,6 @@
             --primary-red: #ff5b60;
             --text-dark: #1a1a1a;
             --text-gray: #666666;
-            --bg-light: #f8f9fa;
             --font-main: 'Inter', sans-serif;
         }
 
@@ -21,11 +20,15 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: var(--font-main);
             color: var(--text-dark);
             line-height: 1.6;
-            
         }
 
         a {
@@ -33,20 +36,20 @@
             color: inherit;
         }
 
+        /* ===== CONTAINER - căn giữa và cách đều 2 bên ===== */
         .container {
             max-width: 1100px;
+            width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
-            
+            padding: 0 24px;
         }
 
-        /* HEADER */
+        /* ===== HEADER ===== */
         header {
-            padding: 30px 0;
             border-bottom: 1px solid #eaeaea;
             position: sticky;
             top: 0;
-            background-color: white; 
+            background-color: white;
             z-index: 1000;
         }
 
@@ -54,6 +57,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 30px 0;
         }
 
         .logo {
@@ -68,57 +72,50 @@
         .logo-icon {
             background-color: black;
             color: white;
-            width: 24px;
-            height: 24px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 700;
         }
 
-     
         .social-links {
             display: flex;
-            gap: 15px; 
-            align-items: center;
-        }
-
-   
-        .social-links {
-            display: flex;
-            gap: 15px; 
+            gap: 15px;
             align-items: center;
         }
 
         .social-icon {
-            display: flex; 
+            display: flex;
             justify-content: center;
             align-items: center;
-            text-decoration: none;
-            width: 30px; 
+            width: 30px;
             height: 30px;
             background-color: #ff5b60;
-            border-radius: 50%; 
-            transition: background-color 0.3s ease; 
-        }   
-
-    
-        .social-icon i {
-            color: white; 
-            font-size: 16px; 
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
         }
 
-        
+        .social-icon i {
+            color: white;
+            font-size: 14px;
+        }
+
         .social-icon:hover {
             background-color: #e04a4f;
         }
 
-        
+        /* ===== HERO ===== */
+        .hero-section {
+            padding: 80px 0;
+        }
+
         .hero {
             display: flex;
             align-items: center;
             gap: 60px;
-            padding: 80px 0;
         }
 
         .hero-img {
@@ -154,6 +151,7 @@
         .stats {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
         }
 
         .stat-item h3 {
@@ -169,7 +167,7 @@
             letter-spacing: 1px;
         }
 
-        
+        /* ===== SECTION TITLE ===== */
         .section-title {
             font-size: 14px;
             font-weight: 700;
@@ -190,11 +188,12 @@
             background-color: var(--primary-red);
         }
 
-        .about {
+        /* ===== ABOUT ===== */
+        .about-section {
             padding: 40px 0;
         }
 
-        .about p {
+        .about-section p {
             color: var(--text-gray);
             margin-bottom: 30px;
             max-width: 800px;
@@ -204,7 +203,7 @@
             display: inline-block;
             padding: 12px 24px;
             border: 1px solid red;
-            color:red;
+            color: red;
             text-transform: uppercase;
             font-size: 12px;
             font-weight: 600;
@@ -220,8 +219,12 @@
             color: white;
         }
 
-        .skills {
+        /* ===== SKILLS ===== */
+        .skills-section {
             padding: 60px 0;
+        }
+
+        .skills {
             display: flex;
             gap: 60px;
         }
@@ -244,10 +247,15 @@
             color: var(--text-gray);
         }
 
-        .experience {
+        /* ===== EXPERIENCE ===== */
+        .experience-section {
             padding: 40px 0 80px;
+        }
+
+        .experience-inner {
             display: flex;
             gap: 60px;
+            margin-top: 20px;
         }
 
         .exp-col {
@@ -271,11 +279,12 @@
             margin-bottom: 15px;
         }
 
-        .exp-col p, .exp-col li {
+        .exp-col p,
+        .exp-col li {
             color: gray;
             font-size: 14px;
         }
-        
+
         .exp-col p {
             margin-bottom: 15px;
         }
@@ -288,8 +297,8 @@
             margin-bottom: 10px;
         }
 
-     
-        .works {
+        /* ===== WORKS ===== */
+        .works-section {
             padding: 40px 0 80px;
         }
 
@@ -332,7 +341,7 @@
             border-radius: 8px;
         }
 
-        
+        /* ===== FOOTER ===== */
         footer {
             background-color: black;
             color: white;
@@ -369,106 +378,171 @@
             color: white;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero, .skills, .experience, .project-card {
+            .js {
+                display: none;
+            }
+
+            .hero {
                 flex-direction: column;
                 gap: 30px;
             }
+
+            .hero-img {
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .skills {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .skills-section {
+                padding: 40px 0;
+            }
+
+            .experience-inner {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .project-card {
+                flex-direction: column;
+            }
+
             .project-info {
                 padding: 30px;
             }
-            .hero-content h1 {
-                font-size: 30px;
+
+            .project-img {
+                padding: 20px;
             }
-            .js{
-                display:none;}
+
+            .footer-title {
+                font-size: 26px;
+            }
         }
-        
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .stat-item h3 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <div class="logo-icon">J</div>
-                <span class="js">JASON STROFF</span>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/qbao020206-tech/S-Group/tree/Front-end" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://stackoverflow.com/" target="_blank" class="social-icon">
-                    <i class="fab fa-stack-overflow"></i>
-                </a>
-                <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-icon">J</div>
+                    <span class="js">JASON STROFF</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/qbao020206-tech/S-Group/tree/Front-end" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://stackoverflow.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="container hero">
-        <div class="hero-img">
-            <img src="backgroud.jpg" alt="Jason Stroff Portrait">
-        </div>
-        <div class="hero-content">
-            <p class="greeting">Hi there</p>
-            <h1>I'm Jason Stroff<br>UI/UX DESIGNER +<br>DEVELOPER based in<br>Florida.</h1>
-            <div class="stats">
-                <div class="stat-item">
-                    <h3>6+</h3>
-                    <p>Experience</p>
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-img">
+                    <img src="backgroud.jpg" alt="Jason Stroff Portrait">
                 </div>
-                <div class="stat-item">
-                    <h3>89</h3>
-                    <p>Projects</p>
-                </div>
-                <div class="stat-item">
-                    <h3>52</h3>
-                    <p>Happy Clients</p>
+                <div class="hero-content">
+                    <p class="greeting">Hi there</p>
+                    <h1>I'm Jason Stroff<br>UI/UX DESIGNER +<br>DEVELOPER based in<br>Florida.</h1>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>6+</h3>
+                            <p>Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>89</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>52</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container about">
-        <h2 class="section-title">About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum ante a porta blandit. Quisque velit tortor, ultricies in quam ut, luctus convallis metus. Nunc vitae felis rutrum, mattis justo quis, bibendum tellus. Integer bibendum eget dolor nec venenatis. Aliquam erat volutpat. Etiam et est vitae turpis accumsan vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec hendrerit mi Nulla consequat tempor.</p>
-        <button class="btn">Download Resume</button>
-    </section>
-
-    <section class="container skills">
-        <div class="skills-col">
-            <h2 class="section-title">Core Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express.js</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Vue.js</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Sequelize</span>
-                <span class="skill-tag">Github</span>
-                <span class="skill-tag">HTML</span>
-            </div>
-        </div>
-        <div class="skills-col">
-            <h2 class="section-title">Other Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">Storyblok</span>
-                <span class="skill-tag">PWAs</span>
-                <span class="skill-tag">Responsive Web Design</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Vuetify</span>
-            </div>
+    <!-- ABOUT -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum ante a porta blandit. Quisque velit tortor, ultricies in quam ut, luctus convallis metus. Nunc vitae felis rutrum, mattis justo quis, bibendum tellus. Integer bibendum eget dolor nec venenatis. Aliquam erat volutpat. Etiam et est vitae turpis accumsan vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec hendrerit mi Nulla consequat tempor.</p>
+            <button class="btn">Download Resume</button>
         </div>
     </section>
 
-    <section class="container experience">
-        <h2 class="section-title" style="display:none;">Work Experience</h2> <div style="width: 100%;">
+    <!-- SKILLS -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="skills">
+                <div class="skills-col">
+                    <h2 class="section-title">Core Skills</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Sequelize</span>
+                        <span class="skill-tag">Github</span>
+                        <span class="skill-tag">HTML</span>
+                    </div>
+                </div>
+                <div class="skills-col">
+                    <h2 class="section-title">Other Skills</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Storyblok</span>
+                        <span class="skill-tag">PWAs</span>
+                        <span class="skill-tag">Responsive Web Design</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vuetify</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section">
+        <div class="container">
             <h2 class="section-title">Work Experience</h2>
-            <div style="display: flex; gap: 60px; margin-top: 20px;" class="experience-inner">
+            <div class="experience-inner">
                 <div class="exp-col">
                     <p class="exp-date">2019 - Present</p>
                     <h3>Matrix Media Inc</h3>
@@ -494,44 +568,47 @@
         </div>
     </section>
 
-    <section class="container works">
-        <h2 class="section-title">Latest Works</h2>
-        
-        <div class="project-card">
-            <div class="project-info">
-                <h3>Tripy mobile app</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
-                <button class="btn">Details</button>
+    <!-- WORKS -->
+    <section class="works-section">
+        <div class="container">
+            <h2 class="section-title">Latest Works</h2>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Tripy mobile app</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                    <button class="btn">Details</button>
+                </div>
+                <div class="project-img" style="background-color: #e0f2fe;">
+                    <img src="the1.jpg" alt="Tripy mobile app">
+                </div>
             </div>
-            <div class="project-img" style="background-color: #e0f2fe;">
-                <img src="the1.jpg" alt="Tripy mobile app">
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Hello mobile app</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                    <button class="btn">Details</button>
+                </div>
+                <div class="project-img" style="background-color: #f1f5f9;">
+                    <img src="the2.jpg" alt="Hello mobile app">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Cute cookies app</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
+                    <button class="btn">Details</button>
+                </div>
+                <div class="project-img" style="background-color: #fce7f3;">
+                    <img src="the3.jpg" alt="Cute cookies app">
+                </div>
             </div>
         </div>
-
-        <div class="project-card">
-            <div class="project-info">
-                <h3>Hello mobile app</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
-                <button class="btn">Details</button>
-            </div>
-            <div class="project-img" style="background-color: #f1f5f9;">
-                <img src="the2.jpg" alt="Hello mobile app">
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-info">
-                <h3>Cute cookies app</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum nulla tellus, quis efficitur mauris tristique efficitur. Aliquam rhoncus sem sed ullamcorper venenatis. Aenean malesuada eu orci non sodales.</p>
-                <button class="btn">Details</button>
-            </div>
-            <div class="project-img" style="background-color: #fce7f3;">
-                <img src="the3.jpg" alt="Cute cookies app">
-            </div>
-        </div>
-
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p class="footer-subtitle">Stay In Touch</p>
